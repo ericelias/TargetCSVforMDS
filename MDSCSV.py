@@ -1,33 +1,26 @@
 def mdscsv():
 
-	from deepface import DeepFace			### All the modules needed
+	from deepface import DeepFace					### All the modules needed
 	import matplotlib.pyplot as plt
 	import pandas as pd
 	import csv
 
 	models = ["VGG-Face", "Facenet", "Facenet512", "OpenFace", "DeepFace", "DeepID", "ArcFace", "Dlib", "SFace"]
-	modelname = models[1]		### Facial recognition program to use. Type the number from the list above 
-								### that you want to use into models[]
+	modelname = models[1]						### Facial recognition program to use. Type the number from the list above 
+									### that you want to use into models[]
 
-	csvloc = "/Users/EricElias/Desktop/test/test.csv" 			### Place csv path into the quotes
-																### A new .csv will be created if there isn't one in the path
+	csvloc = "" 							### Place csv path into the quotes
+									### A new .csv will be created if there isn't one in the path
 
 	### Input target paths in quotes separated by commas into list (can be any amount of targets)
-	imglist = ["/Users/EricElias/Desktop/test/CFD-MF-319-016-N.jpg",
-	"/Users/EricElias/Desktop/test/CFD-AF-200-228-N.jpg",
-	"/Users/EricElias/Desktop/test/CFD-AF-201-060-N.jpg",
-	"/Users/EricElias/Desktop/test/CFD-AF-202-122-N.jpg",
-	"/Users/EricElias/Desktop/test/CFD-BF-001-025-N.jpg",
-	"/Users/EricElias/Desktop/test/CFD-BF-002-001-N.jpg",
-	"/Users/EricElias/Desktop/test/CFD-BF-003-003-N.jpg",
-	"/Users/EricElias/Desktop/test/CFD-MF-312-002-N.jpg",
-	"/Users/EricElias/Desktop/test/CFD-MF-313-002-N.jpg"]
+	imglist = []
 
-	targets = [] 									### Creates list with abbreviated pathnames of targets to use in csv file
+	targets = [] 							### Creates list with abbreviated pathnames of targets to use in csv file
 	for z in imglist:								
-	    targets.append(z[-20:-4])					### You'll have to adjust append.z[] based on your filenames
+	    targets.append(z[-20:-4])					### You'll have to adjust append.z[] based on your 
+									### filenames for a clean looking output
 
-	header = [""] 									### Creates header list from targets to be analyzed
+	header = [""] 							### Creates header list from targets to be analyzed
 	for i in range(len(targets)):
 		header.append(targets[i])
 
