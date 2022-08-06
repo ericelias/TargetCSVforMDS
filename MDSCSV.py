@@ -31,8 +31,6 @@ def mdscsv():
 	for i in range(len(targets)): 					### Creates similiarity judgements and places into csv
 		newrow = [targets[i]]
 		for o in range(len(imglist)):
-			DeepFace.detectFace(imglist[i])
-			DeepFace.detectFace(imglist[o])
 			resp = DeepFace.verify(img1_path = imglist[i], img2_path = imglist[o], model_name = modelname)
 			if resp['distance'] < 0.001:
 				resp['distance'] = 0
