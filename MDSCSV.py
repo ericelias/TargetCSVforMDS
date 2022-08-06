@@ -18,8 +18,8 @@ def mdscsv():
 
 
 	with open(textfilertf) as infile:
-    	content = infile.read()
-    	text = rtf_to_text(content)
+    		content = infile.read()
+    		text = rtf_to_text(content)
 	newlist = [text]
 	imglist = newlist[0].split()
 
